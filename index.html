@@ -514,12 +514,8 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:70px 4vw 
 </div>
 
 <script>
-/* ================= GOOGLE SHEETS =================
-   1. Create a Google Sheet with headers: Timestamp | Name | Phone | Email | Configuration | Source
-   2. Extensions → Apps Script → paste the code from google-apps-script.js (in this folder)
-   3. Deploy → New deployment → Web app → Execute as: Me → Access: Anyone
-   4. Paste the Web app URL below.                       */
-const GOOGLE_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwnoDGkVD-GjPnR6Najr12CaKqFJK_IkSCnncazWC-Hfsv6CYpxJ_3ldkIcAnuXhdmD/exec";
 
 function sendToSheet(form, source){
   const data = new FormData(form);
