@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brigade Stellaris, Velachery | Luxury 3 & 4 BHK Residences in Chennai</title>
+<meta name="description" content="Brigade Stellaris — a limited collection of 284 luxury 3, 4 BHK & duplex residences in Velachery, Chennai. 5.19 acres, Singapore-designed biophilic architecture, 100 m from Phoenix Marketcity. ₹4.49 Cr* onwards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E2A38;          /* brochure deep teal-navy */
+  --navy-deep:#0A1F2B;
+  --ink:#16384A;           /* headline ink */
+  --rust:#B0501F;          /* copper hairline accent */
+  --rust-bright:#C75B22;
+  --amber:#F5A81C;         /* logo sun dot */
+  --paper:#F7F4EF;         /* warm off-white */
+  --white:#FFFFFF;
+  --grey:#5C6B72;
+  --line:rgba(22,56,74,.14);
+  --disp:'Jost',sans-serif;
+  --body:'Outfit',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-weight:300}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+::selection{background:var(--amber);color:var(--navy)}
+
+/* ---------- type ---------- */
+h1,h2,h3{font-family:var(--disp);font-weight:300;text-transform:uppercase;line-height:1.12}
+h2{font-size:clamp(1.9rem,3.6vw,3rem);letter-spacing:.04em}
+.eyebrow{font-family:var(--disp);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rust);display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.eyebrow::before{content:"";width:44px;height:2px;background:var(--rust)}
+.lead{color:var(--grey);max-width:640px;font-size:1.02rem}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;font-family:var(--disp);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;padding:15px 34px;border:1px solid transparent;cursor:pointer;transition:.3s}
+.btn-amber{background:var(--amber);color:var(--navy)}
+.btn-amber:hover{background:#ffbe3d}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--navy)}
+.btn-rust{background:var(--rust);color:#fff}
+.btn-rust:hover{background:var(--rust-bright)}
+
+/* ---------- nav ---------- */
+nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 4vw;transition:.35s;background:linear-gradient(to bottom,rgba(10,31,43,.75),transparent)}
+nav.scrolled{background:var(--navy);box-shadow:0 4px 24px rgba(0,0,0,.25);padding:12px 4vw}
+.logo{font-family:var(--disp);color:#fff;line-height:1.05;letter-spacing:.14em;font-size:1.05rem}
+.logo b{font-weight:600;display:flex;align-items:center;gap:8px}
+.logo b::after{content:"";width:13px;height:13px;border-radius:50%;background:var(--amber)}
+.logo span{color:var(--rust-bright);font-weight:400;letter-spacing:.2em}
+.logo small{display:block;color:rgba(255,255,255,.55);font-size:.55rem;letter-spacing:.4em;margin-top:3px}
+.nav-links{display:flex;gap:30px}
+.nav-links a{color:rgba(255,255,255,.85);font-family:var(--disp);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--amber);transition:.3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:11px 24px}
+.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+.burger span{width:26px;height:2px;background:#fff}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:#fff;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:url("images/hero.jpg") center/cover no-repeat;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(190deg,rgba(10,31,43,.28) 20%,rgba(10,31,43,.82) 78%,var(--navy-deep));z-index:-1}
+.hero-inner{width:100%;max-width:1280px;margin:0 auto;padding:150px 4vw 60px;display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:end}
+.hero h1{font-size:clamp(2.5rem,6vw,4.8rem);letter-spacing:.03em}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero-sub{margin-top:20px;color:rgba(255,255,255,.82);max-width:520px;font-size:1.05rem}
+.hero-tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-tags span{font-family:var(--disp);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;border:1px solid rgba(255,255,255,.35);padding:8px 16px;backdrop-filter:blur(4px)}
+.hero-card{background:rgba(10,31,43,.62);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.16);border-top:3px solid var(--amber);padding:34px 32px}
+.hero-card h3{font-size:.78rem;letter-spacing:.3em;color:var(--amber);margin-bottom:22px}
+.stat{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.stat:last-of-type{border:none}
+.stat b{font-family:var(--disp);font-weight:500;font-size:1.25rem;letter-spacing:.03em}
+.stat small{color:rgba(255,255,255,.6);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.hero-card .btn{width:100%;text-align:center;margin-top:24px}
+.hero-card .rera{margin-top:16px;font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.06em;line-height:1.5}
+
+/* ---------- highlights ---------- */
+.strip{background:var(--navy);color:#fff;padding:74px 4vw}
+.strip-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+.strip-cell{background:var(--navy);padding:34px 26px;transition:.3s}
+.strip-cell:hover{background:#123245}
+.strip-cell b{font-family:var(--disp);font-weight:400;font-size:1.5rem;display:block;color:var(--amber);letter-spacing:.03em}
+.strip-cell span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+
+/* ---------- generic section ---------- */
+section{padding:96px 4vw}
+.wrap{max-width:1280px;margin:0 auto}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.imgframe{position:relative}
+.imgframe::after{content:"";position:absolute;top:18px;left:-18px;right:18px;bottom:-18px;border:1px solid var(--rust);z-index:-1}
+.about-list{margin-top:28px;display:grid;gap:14px}
+.about-list li{list-style:none;display:flex;gap:14px;color:var(--grey)}
+.about-list li::before{content:"";flex:0 0 22px;height:2px;background:var(--rust);margin-top:13px}
+
+/* ---------- why ---------- */
+.why{background:var(--white)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);margin-top:56px}
+.why-item{padding:44px 40px;border-bottom:1px solid var(--line);position:relative}
+.why-item:nth-child(odd){border-right:1px solid var(--line)}
+.why-item b{font-family:var(--disp);font-weight:300;font-size:2.4rem;color:transparent;-webkit-text-stroke:1px var(--rust);display:block;margin-bottom:14px}
+.why-item h3{font-size:1.05rem;letter-spacing:.12em;margin-bottom:10px}
+.why-item p{color:var(--grey);font-size:.95rem}
+
+/* ---------- residences ---------- */
+.res{background:var(--navy);color:#fff}
+.res .eyebrow{color:var(--amber)}
+.res .eyebrow::before{background:var(--amber)}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
+.res-card{border:1px solid rgba(255,255,255,.16);padding:40px 34px;display:flex;flex-direction:column;transition:.35s;background:rgba(255,255,255,.02)}
+.res-card:hover{transform:translateY(-6px);border-color:var(--amber)}
+.res-card h3{font-size:1.5rem;letter-spacing:.08em}
+.res-card .size{color:rgba(255,255,255,.6);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;margin:8px 0 22px}
+.res-card .price{font-family:var(--disp);font-weight:500;font-size:1.7rem;color:var(--amber);margin-bottom:6px}
+.res-card .pn{font-size:.68rem;color:rgba(255,255,255,.45);margin-bottom:24px}
+.res-card ul{list-style:none;margin-bottom:30px;display:grid;gap:9px}
+.res-card ul li{font-size:.9rem;color:rgba(255,255,255,.78);display:flex;gap:10px}
+.res-card ul li::before{content:"—";color:var(--rust-bright)}
+.res-card .btn{margin-top:auto;text-align:center}
+
+/* ---------- gallery ---------- */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px;margin-top:56px}
+.gal-item{position:relative;overflow:hidden;cursor:pointer}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.gal-item:hover img{transform:scale(1.07)}
+.gal-item figcaption{position:absolute;inset:auto 0 0;padding:34px 18px 14px;background:linear-gradient(transparent,rgba(10,31,43,.85));color:#fff;font-family:var(--disp);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;opacity:0;transition:.4s}
+.gal-item:hover figcaption{opacity:1}
+.g-wide{grid-column:span 2}
+.g-tall{grid-row:span 2}
+
+/* ---------- amenities ---------- */
+.amen{background:var(--white)}
+.amen-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;margin-top:56px;align-items:start}
+.amen-cols{columns:2;gap:40px}
+.amen-item{break-inside:avoid;padding:16px 0;border-bottom:1px solid var(--line)}
+.amen-item b{font-family:var(--disp);font-weight:500;font-size:.92rem;letter-spacing:.1em;text-transform:uppercase;display:block}
+.amen-item span{color:var(--grey);font-size:.84rem}
+.amen-img{position:sticky;top:110px}
+.amen-img img+img{margin-top:14px}
+
+/* ---------- masterplan ---------- */
+.plan{background:var(--paper)}
+.plan .split{grid-template-columns:.85fr 1.15fr}
+.plan-legend{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
+.plan-legend span{font-size:.82rem;color:var(--grey);display:flex;gap:10px}
+.plan-legend span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rust);margin-top:7px;flex:none}
+
+/* ---------- location ---------- */
+.loc{background:var(--navy);color:#fff}
+.loc .eyebrow{color:var(--amber)}
+.loc .eyebrow::before{background:var(--amber)}
+.loc-map{margin-top:52px;border:1px solid rgba(255,255,255,.15)}
+.loc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:52px}
+.loc-col h3{font-size:.85rem;letter-spacing:.24em;color:var(--amber);padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:16px}
+.loc-col ul{list-style:none;display:grid;gap:11px}
+.loc-col li{display:flex;justify-content:space-between;gap:12px;font-size:.88rem;color:rgba(255,255,255,.8)}
+.loc-col li b{font-weight:400;color:var(--amber);white-space:nowrap;font-size:.8rem}
+
+/* ---------- form section ---------- */
+.enquire{background:linear-gradient(rgba(10,31,43,.88),rgba(10,31,43,.88)),url("images/lap-pool.jpg") center/cover fixed;color:#fff}
+.enq-split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.enq-split .eyebrow{color:var(--amber)}
+.enq-split .eyebrow::before{background:var(--amber)}
+form .field{margin-bottom:18px}
+form label{display:block;font-family:var(--disp);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:7px}
+form input,form select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.25);color:#fff;padding:14px 16px;font-family:var(--body);font-size:.95rem;outline:none;transition:.3s}
+form input:focus,form select:focus{border-color:var(--amber);background:rgba(255,255,255,.1)}
+form select option{color:var(--ink)}
+.form-note{font-size:.68rem;color:rgba(255,255,255,.45);margin-top:14px;line-height:1.5}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:70px 4vw 34px;font-size:.85rem}
+.foot-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px}
+.foot-grid h4{font-family:var(--disp);font-weight:400;letter-spacing:.24em;text-transform:uppercase;font-size:.78rem;color:var(--amber);margin-bottom:16px}
+.foot-grid p{line-height:1.7;margin-bottom:10px}
+.disclaimer{max-width:1280px;margin:44px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:.68rem;line-height:1.6;color:rgba(255,255,255,.4)}
+
+/* ---------- popup ---------- */
+.popup-overlay{position:fixed;inset:0;background:rgba(10,31,43,.7);backdrop-filter:blur(5px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.popup-overlay.show{display:flex;animation:fade .35s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.popup{background:var(--navy);color:#fff;max-width:880px;width:100%;display:grid;grid-template-columns:1fr 1.1fr;overflow:hidden;border-top:4px solid var(--amber);animation:pop .4s}
+@keyframes pop{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+.popup-img{background:url("images/pool-courtyard.jpg") center/cover;min-height:200px}
+.popup-body{padding:42px 40px;position:relative}
+.popup-body h3{font-size:1.4rem;letter-spacing:.08em;margin-bottom:6px}
+.popup-body .p-sub{color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:24px}
+.popup-close{position:absolute;top:14px;right:16px;background:none;border:none;color:rgba(255,255,255,.6);font-size:1.6rem;cursor:pointer;line-height:1}
+.popup-close:hover{color:#fff}
+
+/* ---------- floaters ---------- */
+.floaters{position:fixed;right:22px;bottom:22px;z-index:150;display:flex;flex-direction:column;gap:12px}
+.float-btn{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.3);transition:.3s}
+.float-btn:hover{transform:translateY(-3px)}
+.f-wa{background:#25D366}
+.f-call{background:var(--amber)}
+.float-btn svg{width:26px;height:26px;fill:#fff}
+.f-call svg{fill:var(--navy)}
+
+.reveal{opacity:0;transform:translateY(26px);transition:.7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ---------- responsive ---------- */
+@media(max-width:1000px){
+  .hero-inner,.split,.enq-split,.amen-layout,.popup,.plan .split{grid-template-columns:1fr}
+  .strip-grid,.loc-grid{grid-template-columns:repeat(2,1fr)}
+  .res-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .why-item:nth-child(odd){border-right:none}
+  .nav-links{display:none;position:fixed;inset:0;background:var(--navy);flex-direction:column;align-items:center;justify-content:center;gap:34px;font-size:1.1rem}
+  .nav-links.open{display:flex}
+  .burger{display:flex;z-index:210}
+  .nav-cta{display:none}
+  .popup-img{display:none}
+  .foot-grid{grid-template-columns:1fr}
+  .amen-cols{columns:1}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#home" class="logo"><b>BRIGADE</b><span>STELLARIS</span><small>VELACHERY · CHENNAI</small></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#residences">Residences</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#amenities">Amenities</a>
+    <a href="#location">Location</a>
+    <a href="#enquire">Contact</a>
+  </div>
+  <a href="#enquire" class="btn btn-amber nav-cta">Enquire Now</a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <h1>When all you<br>want is <em>more</em></h1>
+      <p class="hero-sub">A limited collection of 284 luxury residences across 5.19 acres in the heart of Velachery — shaped by light, air and flow, in collaboration with Singapore-based architects.</p>
+      <div class="hero-tags">
+        <span>New Launch</span><span>4 Towers · 13 Floors</span><span>100 m from Phoenix Marketcity</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Project Snapshot</h3>
+      <div class="stat"><small>Starting Price</small><b>₹ 4.49 Cr*</b></div>
+      <div class="stat"><small>Configurations</small><b>3, 4 BHK & Duplex</b></div>
+      <div class="stat"><small>Sizes</small><b>2,033 – 6,800 sq.ft.*</b></div>
+      <div class="stat"><small>Possession</small><b>Dec 2029</b></div>
+      <a href="#enquire" class="btn btn-amber">Book a Site Visit</a>
+      <p class="rera">RERA Reg. No. TNRERA/29/BLG/0052/2026 · www.rera.tn.gov.in</p>
+    </div>
+  </div>
+</header>
+
+<!-- HIGHLIGHT STRIP -->
+<div class="strip">
+  <div class="strip-grid reveal">
+    <div class="strip-cell"><b>5.19 Acres</b><span>Low-density enclave</span></div>
+    <div class="strip-cell"><b>284</b><span>Exclusive residences</span></div>
+    <div class="strip-cell"><b>~75%</b><span>Open & green space</span></div>
+    <div class="strip-cell"><b>100 M</b><span>To Phoenix Marketcity</span></div>
+    <div class="strip-cell"><b>Singapore</b><span>Design collaboration</span></div>
+    <div class="strip-cell"><b>Biophilic</b><span>Nature-led architecture</span></div>
+    <div class="strip-cell"><b>Private Jacuzzi</b><span>In duplex residences</span></div>
+    <div class="strip-cell"><b>Net Zero 2045</b><span>Brigade's commitment</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">You've Done It All — Here's What's Next</p>
+      <h2>Architecture that rises above the expected</h2>
+      <p class="lead" style="margin-top:22px">Brigade Stellaris is shaped for those who've seen enough to know there's always something better. Designed with Singapore-based architects, every residence is drawn around light, air and flow — with biophilic architecture bringing nature into the everyday.</p>
+      <ul class="about-list">
+        <li>Positioned in the heart of Velachery — access without compromise, calm without distance</li>
+        <li>Wellness-focused features, serene social spaces and calm water bodies</li>
+        <li>An elevated amenities centre balancing leisure and luxury</li>
+        <li>By Brigade Group — 300+ buildings and 100 million+ sq.ft. delivered since 1986</li>
+      </ul>
+      <a href="#enquire" class="btn btn-rust" style="margin-top:34px">Request the Brochure</a>
+    </div>
+    <div class="imgframe reveal"><img src="images/pool-courtyard.jpg" alt="Brigade Stellaris courtyard and pool — artist's impression" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="wrap">
+    <p class="eyebrow reveal">Why Brigade Stellaris</p>
+    <h2 class="reveal">Designed for lives that outgrow expectations</h2>
+    <div class="why-grid">
+      <div class="why-item reveal"><b>01</b><h3>Low-Density Luxury</h3><p>Just 284 residences across four towers on 5.19 acres — six homes per floor, no shared walls, and roughly 75% of the land kept open and green.</p></div>
+      <div class="why-item reveal"><b>02</b><h3>Address of Access</h3><p>Phoenix Marketcity and Palladium next door, Velachery MRTS minutes away, and Guindy, OMR and the airport within easy reach.</p></div>
+      <div class="why-item reveal"><b>03</b><h3>Light, Air & Orientation</h3><p>Around 90% of homes face North or East, with double-glazed windows, wide decks and VRV air-conditioning across living and bedrooms.</p></div>
+      <div class="why-item reveal"><b>04</b><h3>Built Responsibly</h3><p>Solar-powered common areas, rainwater harvesting, EV charging for every apartment and Brigade's Net Zero Carbon 2045 roadmap.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESIDENCES -->
+<section class="res" id="residences">
+  <div class="wrap">
+    <p class="eyebrow reveal">Residences</p>
+    <h2 class="reveal">Choose your canvas</h2>
+    <div class="res-grid">
+      <div class="res-card reveal">
+        <h3>3 BHK</h3>
+        <p class="size">2,033 – 2,600 sq.ft.</p>
+        <p class="price">₹ 4.49 Cr*</p>
+        <p class="pn">Onwards · All-inclusive pricing on request</p>
+        <ul><li>3 bathrooms + maid's room options</li><li>Premium marble flooring</li><li>Wide wood-finish decks</li></ul>
+        <a href="#enquire" class="btn btn-ghost">Get Floor Plan</a>
+      </div>
+      <div class="res-card reveal">
+        <h3>4 BHK</h3>
+        <p class="size">3,194 – 3,500 sq.ft.</p>
+        <p class="price">₹ 7.25 Cr*</p>
+        <p class="pn">Onwards · All-inclusive pricing on request</p>
+        <ul><li>Grand living-dining proportions</li><li>Maid's quarters in every unit</li><li>North / East orientation</li></ul>
+        <a href="#enquire" class="btn btn-ghost">Get Floor Plan</a>
+      </div>
+      <div class="res-card reveal">
+        <h3>Duplex</h3>
+        <p class="size">4,600 – 6,800 sq.ft.</p>
+        <p class="price">₹ 11.62 Cr*</p>
+        <p class="pn">Onwards · Limited top-floor collection</p>
+        <ul><li>Private jacuzzi</li><li>Double-height living moments</li><li>Skyline & treetop views</li></ul>
+        <a href="#enquire" class="btn btn-ghost">Get Floor Plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <p class="eyebrow reveal">Gallery</p>
+    <h2 class="reveal">Where every detail knows its place</h2>
+    <div class="gal-grid reveal">
+      <figure class="gal-item g-wide"><img src="images/lap-pool.jpg" alt="Lap pool between the towers" loading="lazy"><figcaption>Lap Pool</figcaption></figure>
+      <figure class="gal-item g-tall"><img src="images/lobby.jpg" alt="Grand lobby" loading="lazy"><figcaption>Lobby</figcaption></figure>
+      <figure class="gal-item"><img src="images/bbq-terrace.jpg" alt="Rooftop barbeque and dining" loading="lazy"><figcaption>BBQ & Dining</figcaption></figure>
+      <figure class="gal-item"><img src="images/gym.jpg" alt="Outdoor fitness studio" loading="lazy"><figcaption>Fitness</figcaption></figure>
+      <figure class="gal-item"><img src="images/jacuzzi.jpg" alt="Private jacuzzi" loading="lazy"><figcaption>Jacuzzi</figcaption></figure>
+      <figure class="gal-item"><img src="images/spa.jpg" alt="Spa and wellness" loading="lazy"><figcaption>Spa & Wellness</figcaption></figure>
+      <figure class="gal-item g-wide"><img src="images/amenities-facade.jpg" alt="Elevated amenities centre" loading="lazy"><figcaption>Amenities Centre</figcaption></figure>
+      <figure class="gal-item"><img src="images/living.jpg" alt="Residence interior" loading="lazy"><figcaption>Residences</figcaption></figure>
+      <figure class="gal-item"><img src="images/view-canopy.jpg" alt="Treetop views" loading="lazy"><figcaption>Green Views</figcaption></figure>
+    </div>
+    <p style="font-size:.68rem;color:var(--grey);margin-top:16px">*Artist's impressions. Images are indicative & for representation purposes only.</p>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amen" id="amenities">
+  <div class="wrap">
+    <p class="eyebrow reveal">Amenities</p>
+    <h2 class="reveal">An elevated centre for movement, connection & renewal</h2>
+    <div class="amen-layout">
+      <div class="amen-img reveal">
+        <img src="images/lounge.jpg" alt="Amenities lounge" loading="lazy">
+        <img src="images/squash.jpg" alt="Squash court" loading="lazy">
+      </div>
+      <div class="amen-cols reveal">
+        <div class="amen-item"><b>Swimming Pool</b><span>Make waves, small and big</span></div>
+        <div class="amen-item"><b>Kids' Lap Pool</b><span>Carefree joy for younger residents</span></div>
+        <div class="amen-item"><b>Fitness Studio</b><span>Don't keep your best self waiting</span></div>
+        <div class="amen-item"><b>Squash Court</b><span>Rackets. Rallies. Replays</span></div>
+        <div class="amen-item"><b>Badminton Court</b><span>United by the sport</span></div>
+        <div class="amen-item"><b>Half Basketball Court</b><span>Play with intent</span></div>
+        <div class="amen-item"><b>Yoga Deck & Dance Room</b><span>Body and mind breathe together</span></div>
+        <div class="amen-item"><b>Spa & Wellness</b><span>Relax the body, rejuvenate the soul</span></div>
+        <div class="amen-item"><b>BBQ & Dining</b><span>Dine in grandeur</span></div>
+        <div class="amen-item"><b>Multipurpose Hall</b><span>One venue, endless possibilities</span></div>
+        <div class="amen-item"><b>Business Center</b><span>Designed for productivity</span></div>
+        <div class="amen-item"><b>AV Room</b><span>Where sight and sound become one</span></div>
+        <div class="amen-item"><b>Indoor Games</b><span>Let the games begin</span></div>
+        <div class="amen-item"><b>Nursery & Kids' Play</b><span>Limitless imagination</span></div>
+        <div class="amen-item"><b>Roof-Seating Area</b><span>On top of the world</span></div>
+        <div class="amen-item"><b>Rain Garden & Open Lawn</b><span>Green at every turn</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MASTER PLAN -->
+<section class="plan">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">Master Plan</p>
+      <h2>A vision shaped with clarity</h2>
+      <p class="lead" style="margin-top:22px">Every square foot is mapped with intention — architecture, landscape and light flowing together, balancing movement with pause, public with private, and scale with serenity.</p>
+      <div class="plan-legend">
+        <span>Drop-off & Grand Lobby</span><span>Lap Pool & Kids' Pool</span>
+        <span>Yoga Deck & Outdoor Gym</span><span>Garden Pavilion</span>
+        <span>Half Basketball Court</span><span>Kids' Playground</span>
+        <span>BBQ Area</span><span>Rain Garden & Open Lawn</span>
+      </div>
+      <a href="#enquire" class="btn btn-rust" style="margin-top:34px">Get the Master Plan</a>
+    </div>
+    <div class="imgframe reveal"><img src="images/masterplan.jpg" alt="Brigade Stellaris master plan" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="loc" id="location">
+  <div class="wrap">
+    <p class="eyebrow reveal">Location</p>
+    <h2 class="reveal">At the intersection of access and ease</h2>
+    <p class="lead reveal" style="color:rgba(255,255,255,.7);margin-top:20px">Velachery is one of Chennai's most connected neighbourhoods — retail icons next door, Guindy National Park's calm nearby, and the MRTS minutes from your door. Leading hospitals, business hubs and five-star stays fall within a 5 km radius.</p>
+    <img class="loc-map reveal" src="images/location-map.jpg" alt="Location map — Brigade Stellaris, Velachery" loading="lazy">
+    <div class="loc-grid">
+      <div class="loc-col reveal"><h3>Retail & Leisure</h3><ul>
+        <li>Phoenix Marketcity <b>100 m</b></li><li>Palladium <b>Next door</b></li><li>Guindy National Park <b>4.9 km</b></li><li>Besant Nagar Beach <b>~8 km</b></li></ul></div>
+      <div class="loc-col reveal"><h3>Connectivity</h3><ul>
+        <li>Velachery MRTS <b>Minutes</b></li><li>Guindy Railway & Metro <b>3 km</b></li><li>Chennai Airport <b>9 km</b></li><li>OMR IT Corridor <b>Easy reach</b></li></ul></div>
+      <div class="loc-col reveal"><h3>Work & Learn</h3><ul>
+        <li>Olympia Tech Park <b>&lt;5 km</b></li><li>WTC Brigade, Perungudi <b>Nearby</b></li><li>IIT Madras <b>~5 km</b></li><li>Anna University <b>~5 km</b></li></ul></div>
+      <div class="loc-col reveal"><h3>Health & Stay</h3><ul>
+        <li>Prashanth Hospital <b>2 km</b></li><li>Apollo Proton Centre <b>&lt;5 km</b></li><li>ITC Grand Chola <b>2.6 km</b></li><li>The Westin <b>&lt;5 km</b></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRE -->
+<section class="enquire" id="enquire">
+  <div class="wrap enq-split">
+    <div class="reveal">
+      <p class="eyebrow">Enquire Now</p>
+      <h2>Built around your highest expectations</h2>
+      <p class="lead" style="color:rgba(255,255,255,.75);margin-top:20px">Share your details and our team will reach out with pricing, floor plans and priority site-visit slots for Brigade Stellaris, Velachery.</p>
+      <p style="margin-top:26px;font-size:.9rem;color:rgba(255,255,255,.6)">Site Marketing Office<br>Old No. 66, New Velachery Main Rd, near Phoenix Marketcity,<br>Indira Gandhi Nagar, Velachery, Chennai 600042</p>
+    </div>
+    <div class="reveal">
+      <form id="mainForm">
+        <div class="field"><label for="mName">Full Name</label><input id="mName" name="name" type="text" required placeholder="Your name"></div>
+        <div class="field"><label for="mPhone">Phone</label><input id="mPhone" name="phone" type="tel" required pattern="[0-9+ ]{10,15}" placeholder="+91"></div>
+        <div class="field"><label for="mEmail">Email</label><input id="mEmail" name="email" type="email" required placeholder="you@email.com"></div>
+        <div class="field"><label for="mConfig">Preferred Configuration</label>
+          <select id="mConfig" name="configuration">
+            <option>3 BHK</option><option>4 BHK</option><option>Duplex</option><option>Not sure yet</option>
+          </select></div>
+        <button type="submit" class="btn btn-amber" style="width:100%">Book a Site Visit</button>
+        <p class="form-note">By submitting, you agree to be contacted about Brigade Stellaris via call, WhatsApp or email.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h4>Brigade Stellaris</h4>
+      <p>A premium residential development by Brigade Group — shaping the way people live, work and play since 1986, with 300+ buildings and over 100 million sq.ft. delivered across South India.</p>
+      <p>RERA Reg. No. TNRERA/29/BLG/0052/2026<br>Details at www.rera.tn.gov.in</p>
+    </div>
+    <div>
+      <h4>Registered Office</h4>
+      <p>29th & 30th Floor, WTC Bangalore, Brigade Gateway Campus, Dr. Rajkumar Road, Malleswaram-Rajajinagar, Bengaluru</p>
+      <p>Offices also at Bengaluru · Hyderabad · Mysuru · Dubai · Singapore</p>
+    </div>
+    <div>
+      <h4>Reach Us</h4>
+      <p>Toll free: 1800 102 9977<br>BrigadeGroup.com</p>
+      <p>Site Office: New Velachery Main Rd, near Phoenix Marketcity, Chennai 600042</p>
+    </div>
+  </div>
+  <p class="disclaimer">Disclaimer: This website is for informational purposes only. Prices marked * are indicative starting prices, exclusive of government charges, other charges and taxes unless stated, and are subject to change without prior notice. All images are artist's impressions or indicative and for representation purposes only. Master plans, floor plans, specifications, amenities and dimensions are subject to change as may be required by relevant authorities or the developer's architect and do not constitute an offer or contract. E & OE. © 2026 Brigade Enterprises Ltd. All rights reserved.</p>
+</footer>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-label="Enquiry form">
+  <div class="popup">
+    <div class="popup-img"></div>
+    <div class="popup-body">
+      <button class="popup-close" id="popupClose" aria-label="Close">&times;</button>
+      <h3>Priority Access</h3>
+      <p class="p-sub">Get pricing, floor plans & early-bird offers for Brigade Stellaris, Velachery.</p>
+      <form id="popupForm">
+        <div class="field"><label for="pName">Full Name</label><input id="pName" name="name" type="text" required placeholder="Your name"></div>
+        <div class="field"><label for="pPhone">Phone</label><input id="pPhone" name="phone" type="tel" required pattern="[0-9+ ]{10,15}" placeholder="+91"></div>
+        <div class="field"><label for="pConfig">Configuration</label>
+          <select id="pConfig" name="configuration">
+            <option>3 BHK</option><option>4 BHK</option><option>Duplex</option><option>Not sure yet</option>
+          </select></div>
+        <button type="submit" class="btn btn-amber" style="width:100%">Get Details on WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATERS -->
+<div class="floaters">
+  <a class="float-btn f-wa" href="https://api.whatsapp.com/send?phone=911800102997&text=Hi%2C%20I%27m%20interested%20in%20Brigade%20Stellaris%2C%20Velachery" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3.2-.5s0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg>
+  </a>
+  <a class="float-btn f-call" href="tel:18001029977" aria-label="Call">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+  </a>
+</div>
+
+<script>
+/* ================= GOOGLE SHEETS =================
+   1. Create a Google Sheet with headers: Timestamp | Name | Phone | Email | Configuration | Source
+   2. Extensions → Apps Script → paste the code from google-apps-script.js (in this folder)
+   3. Deploy → New deployment → Web app → Execute as: Me → Access: Anyone
+   4. Paste the Web app URL below.                       */
+const GOOGLE_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+function sendToSheet(form, source){
+  const data = new FormData(form);
+  data.append("source", source);
+  data.append("timestamp", new Date().toLocaleString("en-IN",{timeZone:"Asia/Kolkata"}));
+  return fetch(GOOGLE_SCRIPT_URL, {method:"POST", mode:"no-cors", body:data});
+}
+
+function wireForm(formId, source){
+  const form = document.getElementById(formId);
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const btn = form.querySelector("button[type=submit]");
+    btn.textContent = "Sending…"; btn.disabled = true;
+    sendToSheet(form, source).finally(()=>{
+      sessionStorage.setItem("stellaris_lead","1");
+      window.location.href = "thank-you.html";
+    });
+  });
+}
+wireForm("mainForm","Home Page Form");
+wireForm("popupForm","Popup");
+
+/* ---------- popup after 8s + CTA triggers ---------- */
+const overlay = document.getElementById("popupOverlay");
+function openPopup(){ overlay.classList.add("show"); document.body.style.overflow="hidden"; }
+function closePopup(){ overlay.classList.remove("show"); document.body.style.overflow=""; }
+document.getElementById("popupClose").addEventListener("click", closePopup);
+overlay.addEventListener("click", e=>{ if(e.target===overlay) closePopup(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closePopup(); });
+
+/* Every CTA button opens the popup (nav text links still scroll) */
+document.querySelectorAll('a.btn[href="#enquire"]').forEach(btn=>{
+  btn.addEventListener("click", e=>{
+    e.preventDefault();
+    openPopup();
+    document.getElementById("pName").focus();
+  });
+});
+
+window.addEventListener("load", ()=>{
+  if(!sessionStorage.getItem("stellaris_popup") && !sessionStorage.getItem("stellaris_lead")){
+    setTimeout(()=>{ openPopup(); sessionStorage.setItem("stellaris_popup","1"); }, 8000);
+  }
+});
+
+/* ---------- nav ---------- */
+const nav = document.getElementById("nav");
+window.addEventListener("scroll", ()=> nav.classList.toggle("scrolled", scrollY>60));
+const burger = document.getElementById("burger"), links = document.getElementById("navLinks");
+burger.addEventListener("click", ()=> links.classList.toggle("open"));
+links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>links.classList.remove("open")));
+
+/* ---------- reveal on scroll ---------- */
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
