@@ -174,6 +174,22 @@ form input:focus,form select:focus{border-color:var(--amber);background:rgba(255
 form select option{color:var(--ink)}
 .form-note{font-size:.68rem;color:rgba(255,255,255,.45);margin-top:14px;line-height:1.5}
 
+/* ---------- OTP verification ---------- */
+form input[readonly]{opacity:.55;cursor:not-allowed}
+.otp-block{display:none;background:rgba(245,168,28,.07);border:1px solid rgba(245,168,28,.3);padding:16px 16px 14px;margin-bottom:18px}
+.otp-block label{color:var(--amber)}
+.otp-row input{letter-spacing:.5em;text-align:center;font-family:var(--disp);font-size:1.05rem}
+.otp-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:9px;flex-wrap:wrap}
+.otp-status{font-size:.72rem;color:rgba(255,255,255,.55);line-height:1.4}
+.otp-status.ok{color:#8fe3a6}
+.otp-status.err{color:#ff9b8a}
+.otp-edit,.otp-resend{background:none;border:none;padding:0;font-family:var(--disp);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.otp-resend{color:var(--amber)}
+.otp-resend:disabled{color:rgba(255,255,255,.35);cursor:default}
+.otp-edit{color:rgba(255,255,255,.55);text-decoration:underline}
+.phone-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px}
+.phone-row label{margin-bottom:0}
+
 /* ---------- footer ---------- */
 footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:70px 4vw 34px;font-size:.85rem}
 .foot-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px}
@@ -446,16 +462,27 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:70px 4vw 
       <p style="margin-top:26px;font-size:.9rem;color:rgba(255,255,255,.6)">Site Marketing Office<br>Old No. 66, New Velachery Main Rd, near Phoenix Marketcity,<br>Indira Gandhi Nagar, Velachery, Chennai 600042</p>
     </div>
     <div class="reveal">
-      <form id="mainForm">
+      <form id="mainForm" novalidate>
         <div class="field"><label for="mName">Full Name</label><input id="mName" name="name" type="text" required placeholder="Your name"></div>
-        <div class="field"><label for="mPhone">Phone</label><input id="mPhone" name="phone" type="tel" required pattern="[0-9+ ]{10,15}" placeholder="+91"></div>
+        <div class="field">
+          <div class="phone-row"><label for="mPhone" style="margin:0">Phone</label><button type="button" class="otp-edit" id="mPhoneEdit" style="display:none">Edit number</button></div>
+          <input id="mPhone" name="phone" type="tel" required pattern="[0-9+ ]{10,15}" placeholder="10-digit mobile number">
+        </div>
+        <div class="field otp-block" id="mOtpBlock">
+          <label for="mOtp">Enter OTP</label>
+          <div class="otp-row"><input id="mOtp" name="otp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="• • • • • •"></div>
+          <div class="otp-meta">
+            <span class="otp-status" id="mOtpStatus"></span>
+            <button type="button" class="otp-resend" id="mOtpResend" disabled>Resend OTP</button>
+          </div>
+        </div>
         <div class="field"><label for="mEmail">Email</label><input id="mEmail" name="email" type="email" required placeholder="you@email.com"></div>
         <div class="field"><label for="mConfig">Preferred Configuration</label>
           <select id="mConfig" name="configuration">
             <option>3 BHK</option><option>4 BHK</option><option>Duplex</option><option>Not sure yet</option>
           </select></div>
-        <button type="submit" class="btn btn-amber" style="width:100%">Book a Site Visit</button>
-        <p class="form-note">By submitting, you agree to be contacted about Brigade Stellaris via call, WhatsApp or email.</p>
+        <button type="submit" class="btn btn-amber" style="width:100%" data-label="Book a Site Visit">Verify Number to Continue</button>
+        <p class="form-note">By submitting, you agree to be contacted about Brigade Stellaris via call, WhatsApp or email. We'll send a one-time OTP to verify your number before booking your site visit.</p>
       </form>
     </div>
   </div>
@@ -490,14 +517,25 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:70px 4vw 
       <button class="popup-close" id="popupClose" aria-label="Close">&times;</button>
       <h3>Priority Access</h3>
       <p class="p-sub">Get pricing, floor plans & early-bird offers for Brigade Stellaris, Velachery.</p>
-      <form id="popupForm">
+      <form id="popupForm" novalidate>
         <div class="field"><label for="pName">Full Name</label><input id="pName" name="name" type="text" required placeholder="Your name"></div>
-        <div class="field"><label for="pPhone">Phone</label><input id="pPhone" name="phone" type="tel" required pattern="[0-9+ ]{10,15}" placeholder="+91"></div>
+        <div class="field">
+          <div class="phone-row"><label for="pPhone" style="margin:0">Phone</label><button type="button" class="otp-edit" id="pPhoneEdit" style="display:none">Edit number</button></div>
+          <input id="pPhone" name="phone" type="tel" required pattern="[0-9+ ]{10,15}" placeholder="10-digit mobile number">
+        </div>
+        <div class="field otp-block" id="pOtpBlock">
+          <label for="pOtp">Enter OTP</label>
+          <div class="otp-row"><input id="pOtp" name="otp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="• • • • • •"></div>
+          <div class="otp-meta">
+            <span class="otp-status" id="pOtpStatus"></span>
+            <button type="button" class="otp-resend" id="pOtpResend" disabled>Resend OTP</button>
+          </div>
+        </div>
         <div class="field"><label for="pConfig">Configuration</label>
           <select id="pConfig" name="configuration">
             <option>3 BHK</option><option>4 BHK</option><option>Duplex</option><option>Not sure yet</option>
           </select></div>
-        <button type="submit" class="btn btn-amber" style="width:100%">Get Details on WhatsApp</button>
+        <button type="submit" class="btn btn-amber" style="width:100%" data-label="Get Details on WhatsApp">Verify Number to Continue</button>
       </form>
     </div>
   </div>
@@ -513,9 +551,30 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:70px 4vw 
   </a>
 </div>
 
+<!-- MSG91 OTP Widget SDK: https://docs.msg91.com/p/tf9GTextN/e/nOB1a51i6-/MSG91 -->
+<script src="https://verify.msg91.com/otp-provider.js"></script>
 <script>
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwnoDGkVD-GjPnR6Najr12CaKqFJK_IkSCnncazWC-Hfsv6CYpxJ_3ldkIcAnuXhdmD/exec";
+
+/* =========================================================
+   MSG91 OTP WIDGET SETUP — replace these 2 values
+   1. Sign up at https://control.msg91.com
+   2. Go to OTP > Widgets, create a widget for this site, add
+      this domain to the allowed origins.
+   3. Copy the Widget ID and Token Auth key from the widget's
+      "Integration" tab and paste them below.
+   ========================================================= */
+const MSG91_WIDGET_ID  = "YOUR_WIDGET_ID";   // e.g. "3xxxxxb"
+const MSG91_TOKEN_AUTH = "YOUR_TOKEN_AUTH";  // e.g. "4xxxxxxxxxxxxxxxxxxxxxxxT3"
+
+initSendOTP({
+  widgetId: MSG91_WIDGET_ID,
+  tokenAuth: MSG91_TOKEN_AUTH,
+  exposeMethods: true,   // gives us sendOtp()/verifyOtp()/retryOtp() so we can build our own OTP box
+  success: function(){},  // handled per-call below instead
+  failure: function(){}
+});
 
 function sendToSheet(form, source){
   const data = new FormData(form);
@@ -524,20 +583,153 @@ function sendToSheet(form, source){
   return fetch(GOOGLE_SCRIPT_URL, {method:"POST", mode:"no-cors", body:data});
 }
 
-function wireForm(formId, source){
-  const form = document.getElementById(formId);
+/* ---------- OTP-gated form submission ---------- */
+function wireForm(cfg){
+  const form       = document.getElementById(cfg.formId);
+  const phoneInput = document.getElementById(cfg.phoneId);
+  const phoneEdit  = document.getElementById(cfg.phoneEditId);
+  const otpBlock   = document.getElementById(cfg.otpBlockId);
+  const otpInput   = document.getElementById(cfg.otpInputId);
+  const otpStatus  = document.getElementById(cfg.otpStatusId);
+  const resendBtn  = document.getElementById(cfg.resendId);
+  const btn        = form.querySelector("button[type=submit]");
+  const finalLabel = btn.dataset.label || btn.textContent;
+
+  let otpSent = false;
+  let otpVerified = false;
+  let cooldownTimer = null;
+
+  function setStatus(msg, kind){
+    otpStatus.textContent = msg || "";
+    otpStatus.className = "otp-status" + (kind ? " " + kind : "");
+  }
+
+  function startCooldown(){
+    let s = 30;
+    resendBtn.disabled = true;
+    resendBtn.textContent = "Resend OTP (" + s + "s)";
+    clearInterval(cooldownTimer);
+    cooldownTimer = setInterval(function(){
+      s--;
+      if(s <= 0){
+        clearInterval(cooldownTimer);
+        resendBtn.disabled = false;
+        resendBtn.textContent = "Resend OTP";
+      } else {
+        resendBtn.textContent = "Resend OTP (" + s + "s)";
+      }
+    }, 1000);
+  }
+
+  function tenDigitPhone(){
+    return phoneInput.value.replace(/[^0-9]/g, "").slice(-10);
+  }
+
+  function resetToPhoneStep(){
+    otpSent = false;
+    otpVerified = false;
+    clearInterval(cooldownTimer);
+    otpBlock.style.display = "none";
+    otpInput.value = "";
+    phoneInput.readOnly = false;
+    phoneEdit.style.display = "none";
+    btn.disabled = false;
+    btn.textContent = "Verify Number to Continue";
+    setStatus("");
+  }
+
+  function sendOtpStep(){
+    const phone = tenDigitPhone();
+    if(phone.length !== 10){
+      setStatus("Enter a valid 10-digit mobile number.", "err");
+      phoneInput.focus();
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = "Sending OTP…";
+    sendOtp(
+      "91" + phone,
+      function(){ // success
+        otpSent = true;
+        otpBlock.style.display = "block";
+        phoneInput.readOnly = true;
+        phoneEdit.style.display = "inline";
+        btn.disabled = false;
+        btn.textContent = "Verify & " + finalLabel;
+        setStatus("OTP sent to +91 " + phone, "ok");
+        startCooldown();
+        otpInput.focus();
+      },
+      function(){ // failure
+        btn.disabled = false;
+        btn.textContent = "Verify Number to Continue";
+        setStatus("Couldn't send OTP. Check the number and try again.", "err");
+      }
+    );
+  }
+
+  function verifyOtpStep(){
+    const code = otpInput.value.trim();
+    if(!code){
+      setStatus("Enter the OTP sent to your phone.", "err");
+      otpInput.focus();
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = "Verifying…";
+    verifyOtp(
+      code,
+      function(){ // success
+        otpVerified = true;
+        setStatus("Number verified.", "ok");
+        clearInterval(cooldownTimer);
+        btn.textContent = "Sending…";
+        sendToSheet(form, cfg.source).finally(function(){
+          sessionStorage.setItem("stellaris_lead", "1");
+          window.location.href = "thank-you.html";
+        });
+      },
+      function(){ // failure
+        btn.disabled = false;
+        btn.textContent = "Verify & " + finalLabel;
+        setStatus("Incorrect OTP. Please try again.", "err");
+        otpInput.value = "";
+        otpInput.focus();
+      }
+    );
+  }
+
+  phoneEdit.addEventListener("click", function(){
+    resetToPhoneStep();
+    phoneInput.focus();
+  });
+
+  resendBtn.addEventListener("click", function(){
+    if(resendBtn.disabled) return;
+    resendBtn.disabled = true;
+    retryOtp(
+      "11", // 11 = SMS/text channel (MSG91 default)
+      function(){ setStatus("OTP resent.", "ok"); startCooldown(); },
+      function(){ setStatus("Couldn't resend OTP. Try again shortly.", "err"); resendBtn.disabled = false; }
+    );
+  });
+
   form.addEventListener("submit", function(e){
     e.preventDefault();
-    const btn = form.querySelector("button[type=submit]");
-    btn.textContent = "Sending…"; btn.disabled = true;
-    sendToSheet(form, source).finally(()=>{
-      sessionStorage.setItem("stellaris_lead","1");
-      window.location.href = "thank-you.html";
-    });
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    if(!otpSent){
+      sendOtpStep();
+    } else if(!otpVerified){
+      verifyOtpStep();
+    }
   });
 }
-wireForm("mainForm","Home Page Form");
-wireForm("popupForm","Popup");
+
+wireForm({formId:"mainForm", source:"Home Page Form", phoneId:"mPhone", phoneEditId:"mPhoneEdit", otpBlockId:"mOtpBlock", otpInputId:"mOtp", otpStatusId:"mOtpStatus", resendId:"mOtpResend"});
+wireForm({formId:"popupForm", source:"Popup", phoneId:"pPhone", phoneEditId:"pPhoneEdit", otpBlockId:"pOtpBlock", otpInputId:"pOtp", otpStatusId:"pOtpStatus", resendId:"pOtpResend"});
 
 /* ---------- popup after 8s + CTA triggers ---------- */
 const overlay = document.getElementById("popupOverlay");
